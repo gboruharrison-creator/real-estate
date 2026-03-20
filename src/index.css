@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body, #root {
+  min-height: 100vh;
+  font-family: "Inter", sans-serif;
+  background-color: #F5F0E8;
+  color: #1A1A1A;
+}
+
+html { scroll-behavior: smooth; }
+
+.font-serif { font-family: "Playfair Display", serif; }
+.font-sans { font-family: "Inter", sans-serif; }
