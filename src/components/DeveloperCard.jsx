@@ -17,12 +17,12 @@ const DEV = {
     { icon: "🗄️", label: "Backend & Database", desc: "Supabase · REST APIs" },
   ],
   built: [
-  { icon: "🦷", name: "BrightSmile Dental", desc: "5-page site, AI chatbot, 5 languages, SEO" },
-  { icon: "🍝", name: "Gusto Restaurant", desc: "Live cart, AI recommender, ordering system" },
-  { icon: "📊", name: "Nexus Analytics", desc: "TypeScript SaaS dashboard, Recharts, Zustand, AI" },
-  { icon: "🏠", name: "Estatly Real Estate", desc: "20 listings, AI advisor, mortgage calc, Leaflet maps" },
-  { icon: "💼", name: "Agency Portfolio", desc: "Animated portfolio + blog + AI contact bot" },
-],
+    { icon: "🦷", name: "BrightSmile Dental", desc: "5-page site, AI chatbot, 5 languages, SEO", url: "https://dental-website-theta.vercel.app" },
+    { icon: "🍝", name: "Gusto Restaurant", desc: "Live cart, AI recommender, 2 languages", url: "https://gusto-restaurant-ebon.vercel.app" },
+    { icon: "📊", name: "Nexus Analytics", desc: "TypeScript SaaS dashboard, Recharts, Zustand, AI reports", url: "https://nexus-analytics-three.vercel.app" },
+    { icon: "🏠", name: "Estatly Real Estate", desc: "20 listings, AI advisor, mortgage calc, 3 languages", url: "https://estatly-london.vercel.app" },
+    { icon: "💼", name: "Portfolio Site", desc: "Personal portfolio, animated, AI contact bot", url: "" },
+  ],
   available: true,
 };
 
@@ -144,10 +144,32 @@ export default function DeveloperCard() {
                   {DEV.built.map((project) => (
                     <div key={project.name} className="flex items-center gap-3 bg-white/5 border border-white/10 rounded-xl px-4 py-3">
                       <span className="text-xl">{project.icon}</span>
-                      <div>
+                      <div className="flex-1 min-w-0">
                         <p className="text-sm font-semibold text-white">{project.name}</p>
                         <p className="text-xs text-gray-400">{project.desc}</p>
                       </div>
+                      {project.url && (
+                        <a
+                          href={project.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={(e) => e.stopPropagation()}
+                          style={{
+                            fontSize: "10px",
+                            fontWeight: 600,
+                            color: "#2ABFA3",
+                            border: "1px solid rgba(42,191,163,0.3)",
+                            borderRadius: "6px",
+                            padding: "3px 8px",
+                            textDecoration: "none",
+                            whiteSpace: "nowrap",
+                            flexShrink: 0,
+                            transition: "all 0.2s",
+                          }}
+                        >
+                          Live →
+                        </a>
+                      )}
                     </div>
                   ))}
                 </div>
